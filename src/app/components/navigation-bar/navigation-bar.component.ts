@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ILoggedUser } from 'src/app/interfaces/loggedUser';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -8,14 +9,14 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class NavigationBarComponent {
 
-    get isLogged() {
-        return this.userService.isLogged;
+    get currentUser(): ILoggedUser {
+        return this.userService.currentUser;
     }
 
     constructor(private userService: UserService) { }
 
     loginHandler() {
-        this.userService.login();
+        this.userService.login("reeidi@abv.bg", '1234');
     }
 
     logoutHandler() {

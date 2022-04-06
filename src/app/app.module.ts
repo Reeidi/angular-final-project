@@ -8,6 +8,7 @@ import { SliderHeaderComponent } from './components/slider-header/slider-header.
 import { FooterComponent } from './components/footer/footer.component';
 import { UserService } from './services/user.service';
 import { StorageService } from './services/storage.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { StorageService } from './services/storage.service';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [
       StorageService,
