@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { NavigationBarComponent } from './components/navigation-bar/navigation-bar.component';
 import { SliderHeaderComponent } from './components/slider-header/slider-header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { UserService } from './services/user.service';
+import { StorageService } from './services/storage.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,10 @@ import { FooterComponent } from './components/footer/footer.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+      StorageService,
+      UserService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

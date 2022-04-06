@@ -1,9 +1,22 @@
 import { Injectable } from '@angular/core';
+import { StorageService } from './storage.service';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class UserService {
 
-  constructor() { }
+    isLogged = false;
+
+    constructor(private storage: StorageService) {
+        this.isLogged = this.storage.getItem('isLogged');
+    }
+
+    login() {
+        this.isLogged = true;
+        this.storage.setItem('isLogged', this.isLogged);
+    }
+
+    logout() {
+        this.isLogged = false;
+        this.storage.setItem('isLogged', this.isLogged);
+    }
 }
