@@ -1,0 +1,43 @@
+.sectionTitle {
+    color: #0072ff;
+    padding-bottom: 12px;
+    text-decoration: underline;
+}
+
+.sideText {
+    padding-bottom: 12px;
+    color: rgb(114, 151, 253);
+    font-size: 15px;
+}
+
+.link {
+    font-size: 30px;
+    line-height: 36px;
+    font-weight: bold;
+    font-family: 'Cabin Sketch', cursive;
+    letter-spacing: -1px;
+    display: inline-block;
+}
+
+.orange {
+    color: #dd5100;
+}
+
+.orange:hover {
+    color: #dd5100;
+}
+
+.green {
+    color: #00ae35;
+}
+
+.green:hover {
+    color: #00ae35;
+}
+
+.art {
+	background:url(../../../assets/images/art.png) 0 0 no-repeat;
+	width:320px;
+	height:159px;
+	margin:0 0 0 -30px;
+}

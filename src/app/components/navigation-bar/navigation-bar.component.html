@@ -1,18 +1,18 @@
 <nav class="navbar navbar-expand-lg topNav">
-    <a href="/" class="navBarBrand">Art shcool</a>
+    <a routerLink="/" class="navBarBrand">Art shcool</a>
     <div class="navbar-collapse">
         <div class="mx-auto flex-column flex-lg-row align-items-center"></div>
 
         <ul *ngIf="currentUser == undefined" class="navBarGroup">
-            <a href="/login" class="nav-link navLink">Login</a>
-            <a href="/register" class="nav-link navLink">Register</a>
+            <a routerLink="/login" class="nav-link navLink">Login</a>
+            <a routerLink="/register" class="nav-link navLink">Register</a>
         </ul>
 
         <ul *ngIf="currentUser?.email" class="navBarGroup">
             <p class=navItem>Welcome, {{currentUser?.email}}</p>
-            <a href="/mine" class="nav-link navLink">My drawings</a>
-            <a href="/drawing/create" class="nav-link navLink">Add drawing</a>
-            <a href="/logout" class="nav-link navLink" (click)="logoutClick()">Logout</a>
+            <a routerLink="/mine" class="nav-link navLink">My drawings</a>
+            <a routerLink="/drawing/create" class="nav-link navLink">Add drawing</a>
+            <a routerLink="/logout" class="nav-link navLink" (click)="logoutClick()">Logout</a>
         </ul>
     </div>
 </nav>
