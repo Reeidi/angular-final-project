@@ -4,25 +4,21 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavigationBarComponent } from './components/navigation-bar/navigation-bar.component';
-import { SliderHeaderComponent } from './components/slider-header/slider-header.component';
-import { FooterComponent } from './components/footer/footer.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { UserService } from './services/user.service';
 import { StorageService } from './services/storage.service';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavigationBarComponent,
-    SliderHeaderComponent,
-    FooterComponent,
     HomePageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    CoreModule
   ],
   providers: [
       StorageService,
