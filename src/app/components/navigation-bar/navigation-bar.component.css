@@ -1,0 +1,29 @@
+.topNav {
+    background-color: green;
+    color: white;
+    width: 100%;
+}
+
+.navBarBrand {
+    color: white;
+    font-size: 1.25rem;
+}
+
+.navBarGroup {
+    display: flex;
+    margin-bottom: 0;
+}
+
+.navLink {
+    color: white;
+}
+
+.navItem {
+    margin-bottom: 0;
+    margin-top: 8px;
+    margin-right: 20px;
+}
+
+.userManagementButtons {
+    color: white;
+}
