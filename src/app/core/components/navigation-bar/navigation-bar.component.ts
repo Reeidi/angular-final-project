@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { IUser } from 'src/app/interfaces/user';
 import { UserService } from 'src/app/services/user.service';
 
@@ -13,7 +14,7 @@ export class NavigationBarComponent {
         return this.userService.currentUser?.user;
     }
 
-    constructor(private userService: UserService) { }
+    constructor(private userService: UserService, private router: Router) { }
 
     loginHandler() {
         this.userService.login("reeidi@abv.bg", '1234');
@@ -21,5 +22,6 @@ export class NavigationBarComponent {
 
     logoutClick() {
         this.userService.logout();
+        this.router.navigate(['/']);
     }
 }
