@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="containerShadow">
+        <h2 class="title">Login</h2>
+
+        <form method="POST" (submit)="submitHandler()">
+            <label for="email" class="label">
+                <strong class="labelStrong">Email:</strong>
+                <input type="text" name="email" class="input" (blur)="emailOnBlur($event)" />
+                <strong class="clear"></strong>
+            </label>
+            <!-- <Alert variant='danger' show="errors.email">"errors.email"</Alert> -->
+
+            <label for="password" class="label">
+                <strong class="labelStrong">Password:</strong>
+                <input type="password" name="password" class="input" (blur)="passwordOnBlur($event)" />
+                <strong class="clear"></strong>
+            </label>
+            <!-- <Alert variant='danger' show="errors.password">"errors.password"</Alert> -->
+
+            <p [ngClass]="error ? 'labelSmall' : 'labelSmallHidden'">Invalid email or password.</p>
+
+            <div class="pad-2">
+                <input type="submit" class="sendButton" value="Log in" (click)="TEMPORARYCLICKHANDLER($event)" />
+            </div>
+        </form>
+    </div>
+</div>

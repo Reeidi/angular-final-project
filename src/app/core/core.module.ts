@@ -4,12 +4,16 @@ import { NavigationBarComponent } from './components/navigation-bar/navigation-b
 import { SliderHeaderComponent } from './components/slider-header/slider-header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { RouterModule } from '@angular/router';
+import { UserLoginComponent } from './components/user-login/user-login.component';
+import { UserRegisterComponent } from './components/user-register/user-register.component';
 
 @NgModule({
   declarations: [
       NavigationBarComponent,
       SliderHeaderComponent,
-      FooterComponent
+      FooterComponent,
+      UserLoginComponent,
+      UserRegisterComponent,
   ],
   imports: [
     CommonModule,
@@ -18,7 +22,9 @@ import { RouterModule } from '@angular/router';
   exports: [
       NavigationBarComponent,
       SliderHeaderComponent,
-      FooterComponent
+      FooterComponent,
+      UserLoginComponent,
+      UserRegisterComponent
   ]
 })
 export class CoreModule { }

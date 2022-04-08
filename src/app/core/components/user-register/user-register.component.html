@@ -1,0 +1,54 @@
+<div class="container">
+    <div class="containerShadow">
+        <h2 class="title">Registration</h2>
+
+        <form method="POST" (submit)="submitHandler()">
+            <label for="firstName" class="label">
+                <strong class="labelStrong">First Name:</strong>
+                <input type="text" name="firstName" id="firstName" class="input" (blur)="firstNameOnBlur($event)" />
+                <strong class="clear"></strong>
+            </label>
+            <!-- <Alert variant='danger' show={errors.firstName">{errors.firstName"</Alert> -->
+
+            <label for="lastName" class="label">
+                <strong class="labelStrong">Last Name:</strong>
+                <input type="text" name="lastName" id="lastName" class="input" (blur)="lastNameOnBlur($event)" />
+                <strong class="clear"></strong>
+            </label>
+            <!-- <Alert variant='danger' show={errors.lastName">{errors.lastName"</Alert> -->
+
+            <label for="email" class="label">
+                <strong class="labelStrong">Email:</strong>
+                <input type="text" name="email" id="email" class="input" (blur)="emailOnBlur($event)" />
+                <strong class="clear"></strong>
+            </label>
+            <!-- <Alert variant='danger' show={errors.email">{errors.email"</Alert> -->
+
+            <label for="age" class="label">
+                <strong class="labelStrong">Age:</strong>
+                <input type="number" name="age" id="age" class="input" [defaultValue]="3" min="3" (blur)="ageOnBlur($event)" />
+                <strong class="clear"></strong>
+            </label>
+            <!-- <Alert variant='danger' show={errors.age">{errors.age"</Alert> -->
+
+            <label for="password" class="label">
+                <strong class="labelStrong">Password:</strong>
+                <input type="password" name="password" id="password" class="input" (blur)="passwordOnBlur($event)" />
+                <strong class="clear"></strong>
+            </label>
+            <!-- <Alert variant='danger' show={errors.password">{errors.password"</Alert> -->
+
+            <label for="repeatPassword" class="label">
+                <strong class="labelStrong">Repeat password:</strong>
+                <input type="password" name="repeatPassword" id="repeatPassword" class="input" (blur)="repeatPasswordOnBlur($event)" />
+                <strong class="clear"></strong>
+            </label>
+            <!-- <Alert variant='danger' show={errors.repeatPassword">{errors.repeatPassword"</Alert> -->
+
+            <div class="pad-2">
+                <input type="submit" class="sendButton" value="Sign Up" />
+            </div>
+        </form>
+        <!-- <Alert variant='danger' show={error">{error"</Alert> -->
+    </div>
+</div>
