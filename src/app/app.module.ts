@@ -9,22 +9,28 @@ import { StorageService } from './services/storage.service';
 import { CoreModule } from './core/core.module';
 import { AboutPageComponent } from './pages/about-page/about-page.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
+import { SchedulePageComponent } from './pages/schedule-page/schedule-page.component';
+import { ScheduleModule } from './schedule/schedule.module';
+import { EventService } from './services/event.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
-    AboutPageComponent
+    AboutPageComponent,
+    SchedulePageComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    CoreModule
+    CoreModule,
+    ScheduleModule
   ],
   providers: [
       StorageService,
-      UserService
+      UserService,
+      EventService
   ],
   bootstrap: [AppComponent]
 })
