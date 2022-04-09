@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/core/services/user.service';
 
@@ -9,12 +10,13 @@ import { UserService } from 'src/app/core/services/user.service';
 })
 export class UserLoginComponent {
 
-    error = false;
+    @ViewChild('f') form!: NgForm;
 
     constructor(private userService: UserService, private router: Router) { }
 
     submitHandler() {
-        this.userService.login('reeidi@abv.bg', '1234');
+        let data = this.form.value;
+        this.userService.login(data);
         this.router.navigate(['/']);
     }
 }

@@ -16,10 +16,6 @@ export class NavigationBarComponent {
 
     constructor(private userService: UserService, private router: Router) { }
 
-    loginHandler() {
-        this.userService.login("reeidi@abv.bg", '1234');
-    }
-
     logoutClick() {
         this.userService.logout();
         this.router.navigate(['/']);

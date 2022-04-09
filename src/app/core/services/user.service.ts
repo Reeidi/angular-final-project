@@ -13,8 +13,12 @@ export class UserService {
 
     constructor(private storage: StorageService, private httpClient: HttpClient) { }
 
-    login(email: string, password: string) {
-        let obs = this.httpClient.post<ILoggedUser>(environment.loginUserUrl, { email, password });
+    login(userData: { email: string, password: string }) {
+
+        // TODO:
+        userData = { email: 'reeidi@abv.bg', password: '1234' };
+
+        let obs = this.httpClient.post<ILoggedUser>(environment.loginUserUrl, userData);
         obs.subscribe(result => {
             if (result.hasOwnProperty('user') && result.hasOwnProperty('token')) {
                 this.storage.setItem('user', result as ILoggedUser);
