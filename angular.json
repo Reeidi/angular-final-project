@@ -27,13 +27,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css",
-              "src/assets/body.css",
-              "src/assets/bootstrap.css",
-              "src/assets/grid_12.css",
-              "src/assets/reset.css",
-              "src/assets/slider.css",
-              "src/assets/style.css"
+              "src/styles.css"
             ],
             "scripts": []
           },

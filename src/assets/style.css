@@ -3,7 +3,6 @@ html, body {
 	width:100%;
 	padding:0;
 	margin:0;
-    font-size: 40px;
 }
 body {
 	font: 14px/22px Georgia, "Times New Roman", Times, serif;
@@ -22,10 +21,6 @@ body {
 	margin:0 10000% 0 0;
 	overflow:hidden;
 	padding:0
-}
-.main {
-	width:100%;
-	background:url(./images/bg.jpg) center 0 no-repeat;
 }
 /***********************************************************************/
 a {
@@ -112,7 +107,7 @@ ul {
 	padding:0;
 	list-style-image:none;
 }
-ul.list-1 li {
+/* ul.list-1 li {
 	padding:0px 0 0px 14px;
 	line-height:22px;
 	background:url(../images/marker-1.gif) 0 9px no-repeat;
@@ -124,8 +119,8 @@ ul.list-1 li a {
 }
 ul.list-1 li a:hover {
 	color:#dd0a00;
-}
-ul.list-2 li {
+} */
+/* ul.list-2 li {
 	padding:0px 0 0px 14px;
 	line-height:22px;
 	background:url(../images/marker-2.gif) 0 9px no-repeat;
@@ -137,7 +132,7 @@ ul.list-2 li a {
 }
 ul.list-2 li a:hover {
 	color:#0072ff;
-}
+} */
 /******************************************************************/
 .clear {
 	clear:both;
@@ -238,25 +233,25 @@ ul.list-2 li a:hover {
 	padding-bottom:12px;
 }
 /*********************************header*************************************/
-.lower-header {
+/* .lower-header {
 	width:1000px;
 	margin:0 auto;
 	z-index:101;
 	background:url(../images/header.jpg) right 0 no-repeat;
-}
+} */
 /* h1 {
 	margin:27px 0 0 63px;
 	display:inline-block;
 	z-index:100;
 } */
-.lower-nav {
+/* .lower-nav {
 	z-index:100;
 	background:url(../images/slider-bg.png) 0 0 no-repeat;
 	margin:17px 0px 0 0px;
 	height:571px;
 	overflow:hidden;
 	padding:0px;
-}
+} */
 ul.menu {
 	margin:10px 0px 0 83px;
 	display:inline-block;
@@ -279,24 +274,24 @@ ul.menu li:hover a, ul.menu li.current a {
 	color:#000;
 }
 /*********************************content*************************************/
-#content {
+/* #content {
 	width:1000px;
 	margin:0 auto;
 	background:url(../images/content-img.png) 1px bottom no-repeat;
-}
-.art {
+} */
+/* .art {
 	background:url(../images/art.png) 0 0 no-repeat;
 	width:320px;
 	height:159px;
 	margin:0 0 0 -30px;
-}
-.block-1 {
+} */
+/* .block-1 {
 	background: url(../images/block-1.gif) 0 bottom repeat-x #fff;
 }
 .block-1-shadow {
 	background:url(../images/block-1-shadow.png) 0 0 repeat-y;
 	padding:18px 30px 0 30px;
-}
+} */
 .img-border {
 	border:#fff 10px solid;
 	box-shadow: 0 0 5px #c1c1c1;

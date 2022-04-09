@@ -1,1 +1,29 @@
-/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file); and also import other style files */
+@import url("./assets/reset.css");
+@import url("./assets/style.css");
+@import url("./assets/grid_12.css");
+@import url("./assets/slider.css");
+@import url("./assets/bootstrap.css");
+@import url("./assets/body.css");
+
+@import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&family=PT+Serif&display=swap');
+
+#content {
+    width: 1000px;
+    margin: 0 auto;
+    background: url(./assets/images/content-img.png) 1px bottom no-repeat;
+}
+
+.block-1 {
+    background: url(./assets/images/block-1.gif) 0 bottom repeat-x #fff;
+}
+
+.block-1-shadow {
+    background: url(./assets/images/block-1-shadow.png) 0 0 repeat-y;
+    padding: 18px 30px 0 30px;
+}
+
+.main {
+    width: 100%;
+    background: url(./assets/images/bg.jpg) center 0 no-repeat;
+}
