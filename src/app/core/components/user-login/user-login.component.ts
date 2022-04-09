@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { UserService } from 'src/app/core/services/user.service';
 
 @Component({
@@ -6,28 +7,14 @@ import { UserService } from 'src/app/core/services/user.service';
     templateUrl: './user-login.component.html',
     styleUrls: ['./user-login.component.css']
 })
-export class UserLoginComponent implements OnInit {
+export class UserLoginComponent {
 
     error = false;
 
-    constructor(private userService: UserService) { }
-
-    ngOnInit(): void {
-    }
-
-    TEMPORARYCLICKHANDLER(e: Event): void {
-        e.preventDefault();
-        this.userService.login('reeidi@abv.bg', '1234');
-    }
+    constructor(private userService: UserService, private router: Router) { }
 
     submitHandler() {
-    }
-
-    emailOnBlur(eventInfo: Event) {
-        console.log('email on blur', eventInfo);
-    }
-
-    passwordOnBlur(eventInfo: Event) {
-        console.log('password on blur', eventInfo);
+        this.userService.login('reeidi@abv.bg', '1234');
+        this.router.navigate(['/']);
     }
 }

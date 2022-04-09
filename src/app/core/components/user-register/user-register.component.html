@@ -2,11 +2,11 @@
     <div class="containerShadow">
         <h2 class="title">Registration</h2>
 
-        <form method="POST" #f="ngForm" ngForm (ngSubmit)="submitHandler()">
+        <form #f="ngForm" ngForm (ngSubmit)="submitHandler()">
             <label for="firstName" class="label">
                 <strong class="labelStrong">First Name:</strong>
                 <input ngModel #firstName="ngModel" type="text" name="firstName" id="firstName"
-                    class="input" (blur)="firstNameOnBlur($event)" required [minlength]="2" />
+                    class="input" required [minlength]="2" />
                 <strong class="clear"></strong>
             </label>
             <!-- https://angular.io/guide/form-validation -->
@@ -17,7 +17,7 @@
             <label for="lastName" class="label">
                 <strong class="labelStrong">Last Name:</strong>
                 <input ngModel #lastName="ngModel" type="text" name="lastName" id="lastName"
-                    class="input" (blur)="lastNameOnBlur($event)" required [minlength]="5" />
+                    class="input" required [minlength]="5" />
                 <strong class="clear"></strong>
             </label>
             <!-- https://angular.io/guide/form-validation -->
@@ -28,7 +28,7 @@
             <label for="email" class="label">
                 <strong class="labelStrong">Email:</strong>
                 <input ngModel #email="ngModel" type="text" name="email" id="email"
-                    class="input" (blur)="emailOnBlur($event)" required email />
+                    class="input" required email />
                 <strong class="clear"></strong>
             </label>
             <!-- https://angular.io/guide/form-validation -->
@@ -39,7 +39,7 @@
             <label for="age" class="label">
                 <strong class="labelStrong">Age:</strong>
                 <input ngModel #age="ngModel" type="number" name="age" id="age"
-                    class="input" (blur)="ageOnBlur($event)" required [defaultValue]="3" min="3" />
+                    class="input" required [defaultValue]="3" min="3" />
                 <strong class="clear"></strong>
             </label>
             <!-- https://angular.io/guide/form-validation -->
@@ -50,7 +50,7 @@
             <label for="password" class="label">
                 <strong class="labelStrong">Password:</strong>
                 <input ngModel #password="ngModel" type="password" name="password" id="password"
-                    class="input" (blur)="passwordOnBlur($event)" required [minlength]="4" />
+                    class="input" required [minlength]="4" />
                 <strong class="clear"></strong>
             </label>
             <!-- https://angular.io/guide/form-validation -->
@@ -61,7 +61,7 @@
             <label for="repeatPassword" class="label">
                 <strong class="labelStrong">Repeat password:</strong>
                 <input ngModel #repeatPassword="ngModel" type="password" name="repeatPassword" id="repeatPassword"
-                    class="input" (blur)="repeatPasswordOnBlur($event)" required [minlength]="4" />
+                    class="input" required [minlength]="4" />
                 <strong class="clear"></strong>
             </label>
             <!-- https://angular.io/guide/form-validation -->

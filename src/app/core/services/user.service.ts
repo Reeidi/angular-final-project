@@ -28,5 +28,6 @@ export class UserService {
 
     async register(userData: { firstName: string, LastName: string, email: string, age: Number, password: string, repeatPassword: string }) {
         // TODO:
+        console.log(`Trying to register user!!`, userData);
     }
 }
