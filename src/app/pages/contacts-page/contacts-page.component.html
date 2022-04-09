@@ -1,0 +1,57 @@
+<section id="content">
+    <div class="container_12">
+        <div class="grid_4 bot-1">
+            <h2 class="sectionTitle">Contact Us</h2>
+            <div class="map">
+                <iframe
+                    title="Map"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11728.944494476631!2d23.328421515075664!3d42.698720803445376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40aa859035e0fc3b%3A0xd3b042e2816cff2c!2sSerdika%20Center!5e0!3m2!1sen!2sbg!4v1639946772245!5m2!1sen!2sbg"
+                    width="280"
+                    height="240"
+                    allowfullscreen=""
+                    loading="lazy"
+                ></iframe>
+            </div>
+            <div class="contacts">
+                <dt>ul. "Lisets" 8, <br />
+                    Sofia</dt>
+                <dd><span>Telephone: </span>+1 800 603 6035</dd>
+                <dd><span>E-mail: mail@demolink.org</span></dd>
+            </div>
+        </div>
+        <div class="grid_8">
+            <div class="block-1 top-5">
+                <div class="block-1-shadow">
+                    <h2 class="formSectionTitle">Contact Form</h2>
+                    <form #f="ngForm" (ngSubmit)="submitHandler()">
+                        <label htmlFor="name" class="label">
+                            <strong class="labelStrong">Name:</strong>
+                            <input type="text" name="name" id="name" class="input" />
+                            <strong class="clear"></strong>
+                        </label>
+                        <label htmlFor="email" class="label">
+                            <strong class="labelStrong">Email:</strong>
+                            <input type="text" name="email" id="email" class="input" />
+                            <strong class="clear"></strong>
+                        </label>
+                        <label htmlFor="phone" class="label">
+                            <strong class="labelStrong">Phone:</strong>
+                            <input type="text" name="phone" id="phone" class="input" />
+                            <strong class="clear"></strong>
+                        </label>
+                        <label htmlFor="message" class="label">
+                            <strong class="labelStrong">Message:</strong>
+                            <textarea name="message" id="message" class="textArea"></textarea>
+                            <strong class="clear"></strong>
+                        </label>
+
+                        <div class="pad-2">
+                            <input type="submit" class="sendButton" value="Send" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</section>

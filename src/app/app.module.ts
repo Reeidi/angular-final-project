@@ -12,6 +12,9 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { SchedulePageComponent } from './pages/schedule-page/schedule-page.component';
 import { ScheduleModule } from './schedule/schedule.module';
 import { EventService } from './services/event.service';
+import { ContactsPageComponent } from './pages/contacts-page/contacts-page.component';
+import { FormsModule } from '@angular/forms';
+import { ContactService } from './services/contact.service';
 
 @NgModule({
   declarations: [
@@ -19,18 +22,21 @@ import { EventService } from './services/event.service';
     HomePageComponent,
     AboutPageComponent,
     SchedulePageComponent,
+    ContactsPageComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     CoreModule,
-    ScheduleModule
+    ScheduleModule,
+    FormsModule
   ],
   providers: [
       StorageService,
       UserService,
-      EventService
+      EventService,
+      ContactService
   ],
   bootstrap: [AppComponent]
 })

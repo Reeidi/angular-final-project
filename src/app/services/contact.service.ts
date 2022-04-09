@@ -1,9 +1,12 @@
 import { Injectable } from '@angular/core';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class ContactService {
 
-  constructor() { }
+    constructor() { }
+
+    send(data: Object): boolean {
+        // TODO:
+        return true;
+    }
 }

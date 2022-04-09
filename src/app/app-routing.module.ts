@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { UserLoginComponent } from './core/components/user-login/user-login.component';
 import { UserRegisterComponent } from './core/components/user-register/user-register.component';
 import { AboutPageComponent } from './pages/about-page/about-page.component';
+import { ContactsPageComponent } from './pages/contacts-page/contacts-page.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { SchedulePageComponent } from './pages/schedule-page/schedule-page.component';
 
@@ -12,6 +13,7 @@ const routes: Routes = [
     { path: 'schedule', component: SchedulePageComponent },
     { path: 'login', component: UserLoginComponent },
     { path: 'register', component: UserRegisterComponent },
+    { path: 'contacts', component: ContactsPageComponent },
 ];
 
 @NgModule({
