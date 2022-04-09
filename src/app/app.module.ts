@@ -4,7 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { UserService } from './services/user.service';
+import { UserService } from './core/services/user.service';
 import { StorageService } from './services/storage.service';
 import { CoreModule } from './core/core.module';
 import { AboutPageComponent } from './pages/about-page/about-page.component';

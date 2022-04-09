@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { StorageService } from './storage.service';
+import { StorageService } from '../../services/storage.service';
 import { environment } from 'src/environments/environment';
-import { ILoggedUser } from '../interfaces/loggedUser';
+import { ILoggedUser } from '../../interfaces/loggedUser';
 
 @Injectable()
 export class UserService {
@@ -24,5 +24,9 @@ export class UserService {
 
     logout() {
         this.storage.setItem('user', null);
+    }
+
+    async register(userData: { firstName: string, LastName: string, email: string, age: Number, password: string, repeatPassword: string }) {
+        // TODO:
     }
 }

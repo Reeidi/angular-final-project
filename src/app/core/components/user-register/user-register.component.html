@@ -2,53 +2,76 @@
     <div class="containerShadow">
         <h2 class="title">Registration</h2>
 
-        <form method="POST" (submit)="submitHandler()">
+        <form method="POST" #f="ngForm" ngForm (ngSubmit)="submitHandler()">
             <label for="firstName" class="label">
                 <strong class="labelStrong">First Name:</strong>
-                <input type="text" name="firstName" id="firstName" class="input" (blur)="firstNameOnBlur($event)" />
+                <input ngModel #firstName="ngModel" type="text" name="firstName" id="firstName"
+                    class="input" (blur)="firstNameOnBlur($event)" required [minlength]="2" />
                 <strong class="clear"></strong>
             </label>
-            <!-- <Alert variant='danger' show={errors.firstName">{errors.firstName"</Alert> -->
+            <!-- https://angular.io/guide/form-validation -->
+            <div class="alert alert-danger" *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)" alert alert-danger>
+                FirstName must be at least 2 characters.
+            </div>
 
             <label for="lastName" class="label">
                 <strong class="labelStrong">Last Name:</strong>
-                <input type="text" name="lastName" id="lastName" class="input" (blur)="lastNameOnBlur($event)" />
+                <input ngModel #lastName="ngModel" type="text" name="lastName" id="lastName"
+                    class="input" (blur)="lastNameOnBlur($event)" required [minlength]="5" />
                 <strong class="clear"></strong>
             </label>
-            <!-- <Alert variant='danger' show={errors.lastName">{errors.lastName"</Alert> -->
+            <!-- https://angular.io/guide/form-validation -->
+            <div class="alert alert-danger" *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)" alert alert-danger>
+                LastName must be at least 5 characters.
+            </div>
 
             <label for="email" class="label">
                 <strong class="labelStrong">Email:</strong>
-                <input type="text" name="email" id="email" class="input" (blur)="emailOnBlur($event)" />
+                <input ngModel #email="ngModel" type="text" name="email" id="email"
+                    class="input" (blur)="emailOnBlur($event)" required email />
                 <strong class="clear"></strong>
             </label>
-            <!-- <Alert variant='danger' show={errors.email">{errors.email"</Alert> -->
+            <!-- https://angular.io/guide/form-validation -->
+            <div class="alert alert-danger" *ngIf="email.invalid && (email.dirty || email.touched)" alert alert-danger>
+                Invalid email.
+            </div>
 
             <label for="age" class="label">
                 <strong class="labelStrong">Age:</strong>
-                <input type="number" name="age" id="age" class="input" [defaultValue]="3" min="3" (blur)="ageOnBlur($event)" />
+                <input ngModel #age="ngModel" type="number" name="age" id="age"
+                    class="input" (blur)="ageOnBlur($event)" required [defaultValue]="3" min="3" />
                 <strong class="clear"></strong>
             </label>
-            <!-- <Alert variant='danger' show={errors.age">{errors.age"</Alert> -->
+            <!-- https://angular.io/guide/form-validation -->
+            <div class="alert alert-danger" *ngIf="age.invalid && (age.dirty || age.touched)" alert alert-danger>
+                Age must be a number bigger 3!
+            </div>
 
             <label for="password" class="label">
                 <strong class="labelStrong">Password:</strong>
-                <input type="password" name="password" id="password" class="input" (blur)="passwordOnBlur($event)" />
+                <input ngModel #password="ngModel" type="password" name="password" id="password"
+                    class="input" (blur)="passwordOnBlur($event)" required [minlength]="4" />
                 <strong class="clear"></strong>
             </label>
-            <!-- <Alert variant='danger' show={errors.password">{errors.password"</Alert> -->
+            <!-- https://angular.io/guide/form-validation -->
+            <div class="alert alert-danger" *ngIf="password.invalid && (password.dirty || password.touched)" alert alert-danger>
+                Password must be at least 4 characters.
+            </div>
 
             <label for="repeatPassword" class="label">
                 <strong class="labelStrong">Repeat password:</strong>
-                <input type="password" name="repeatPassword" id="repeatPassword" class="input" (blur)="repeatPasswordOnBlur($event)" />
+                <input ngModel #repeatPassword="ngModel" type="password" name="repeatPassword" id="repeatPassword"
+                    class="input" (blur)="repeatPasswordOnBlur($event)" required [minlength]="4" />
                 <strong class="clear"></strong>
             </label>
-            <!-- <Alert variant='danger' show={errors.repeatPassword">{errors.repeatPassword"</Alert> -->
+            <!-- https://angular.io/guide/form-validation -->
+            <div class="alert alert-danger" *ngIf="repeatPassword.invalid && (repeatPassword.dirty || repeatPassword.touched)" alert alert-danger>
+                RepeatPassword must be at least 4 characters.
+            </div>
 
             <div class="pad-2">
-                <input type="submit" class="sendButton" value="Sign Up" />
+                <input [disabled]="f.invalid" type="submit" class="sendButton" value="Sign Up" />
             </div>
         </form>
-        <!-- <Alert variant='danger' show={error">{error"</Alert> -->
     </div>
 </div>
