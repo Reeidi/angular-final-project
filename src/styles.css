@@ -28,3 +28,14 @@
     width: 100%;
     background: url(./assets/images/bg.jpg) center 0 no-repeat;
 }
+
+.container {
+    padding: 0;
+}
+
+form.ng-invalid>div.pad-2>input,
+form.ng-invalid>div.pad-2>input:hover,
+form.ng-invalid>div.pad-2>input:active {
+    color: lightgray;
+    text-decoration: none;
+}

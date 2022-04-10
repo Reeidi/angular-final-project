@@ -71,13 +71,3 @@
     color: #00ae35;
     text-decoration: underline;
 }
-
-form.ng-invalid>div.pad-2>input {
-    text-decoration: line-through;
-    color: black;
-}
-
-form.ng-invalid>div.pad-2>input:hover {
-    text-decoration: line-through;
-    color: black;
-}
