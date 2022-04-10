@@ -1,0 +1,51 @@
+<div class="container">
+    <div class="containerShadow">
+        <h2 class="title">{{currentUser.firstName}}'s drawing</h2>
+
+        <div class="pad-2">
+            <img [src]="drawingUrlStr" alt="" class="drawingUrl ? styles.imageBorder : styles.hidden" />
+
+            <form #f="ngForm" (ngSubmit)="submitHandler()">
+                <label for="drawingUrl" class="label">
+                    <strong class="labelStrong">Drawing URL:</strong>
+                    <input ngModel #drawingUrl="ngModel" type="select" name="drawingUrl" class="input" required appUrlValidation (blur)="onUrlBlur()" />
+                    <strong class="clear"></strong>
+                </label>
+                <!-- https://angular.io/guide/form-validation -->
+                <div class="alert alert-danger" *ngIf="drawingUrl.invalid && (drawingUrl.dirty || drawingUrl.touched)" alert alert-danger>
+                    Invalid URL.
+                </div>
+
+                <label for="title" class="label">
+                    <strong class="labelStrong">Title:</strong>
+                    <input ngModel #title="ngModel" type="select" name="title" class="input" required [minlength]="2" />
+                    <strong class="clear"></strong>
+                </label>
+                <!-- https://angular.io/guide/form-validation -->
+                <div class="alert alert-danger" *ngIf="title.invalid && (title.dirty || title.touched)" alert alert-danger>
+                    Title must be at least 2 characters.
+                </div>
+
+                <label for="description" class="label">
+                    <strong class="labelStrong">Description:</strong>
+                    <input ngModel #description="ngModel" type="select" name="description" class="input" />
+                    <strong class="clear"></strong>
+                </label>
+                <label for="authorName" class="label">
+                    <strong class="labelStrong">Author name:</strong>
+                    <input [ngModel]="currentUserName" #authorName="ngModel" type="text" name="authorName" class="input" disabled />
+                    <strong class="clear"></strong>
+                </label>
+                <label for="authorAge" class="label">
+                    <strong class="labelStrong">Author age:</strong>
+                    <input [(ngModel)]="currentUser.age" #authorAge="ngModel" type="number" name="authorAge" class="input" disabled />
+                    <strong class="clear"></strong>
+                </label>
+
+                <div class="pad-2">
+                    <input [disabled]="f.invalid" type="submit" class="button" value="Save" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

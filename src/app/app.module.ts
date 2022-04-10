@@ -15,6 +15,7 @@ import { EventService } from './services/event.service';
 import { ContactsPageComponent } from './pages/contacts-page/contacts-page.component';
 import { FormsModule } from '@angular/forms';
 import { ContactService } from './services/contact.service';
+import { DrawingsModule } from './drawings/drawings.module';
 
 @NgModule({
   declarations: [
@@ -28,9 +29,10 @@ import { ContactService } from './services/contact.service';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
     CoreModule,
     ScheduleModule,
-    FormsModule
+    DrawingsModule
   ],
   providers: [
       StorageService,
