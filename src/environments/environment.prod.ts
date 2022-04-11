@@ -3,4 +3,5 @@ export const environment = {
   loginUserUrl: ``,
   registerUserUrl: ``,
   eventsUrl: ``,
+  getAllDrawingsUrl: ``,
 };

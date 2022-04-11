@@ -4,4 +4,5 @@ export interface IUser {
     email: string;
     age: number;
     password: string;
+    posts: any[];
 }

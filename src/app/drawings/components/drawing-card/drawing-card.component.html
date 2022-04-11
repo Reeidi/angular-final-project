@@ -1,0 +1,10 @@
+<div class="drawingDard">
+    <strong class="strongText">{{drawing.title}}</strong>
+    <a [routerLink]="['/drawing', drawing._id]">
+        <img [src]="drawing.imageUrl" alt="" class="imageBorder">
+    </a>
+    <div class="info">
+        <small class="subtitle">{{drawing.author.firstName}}, {{drawing.author.age}}</small>
+        <app-likes-counter [likes]="drawing.votes.length" [userLikesImage]="drawing.userLikesImage" [imageId]="drawing._id"></app-likes-counter>
+    </div>
+</div>

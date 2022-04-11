@@ -9,6 +9,7 @@ export const environment = {
   loginUserUrl: `${baseUrl}/auth/login`,
   registerUserUrl: `${baseUrl}/auth/register`,
   eventsUrl: `${baseUrl}/event`,
+  getAllDrawingsUrl: `${baseUrl}/posts`,
 };
 
 /*

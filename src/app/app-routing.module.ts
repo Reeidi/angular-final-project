@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { UserLoginComponent } from './auth/components/user-login/user-login.component';
 import { UserRegisterComponent } from './auth/components/user-register/user-register.component';
 import { DrawingCreateComponent } from './drawings/components/drawing-create/drawing-create.component';
+import { GalleryPageComponent } from './drawings/components/gallery-page/gallery-page.component';
 import { AboutPageComponent } from './pages/about-page/about-page.component';
 import { ContactsPageComponent } from './pages/contacts-page/contacts-page.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
@@ -16,6 +17,7 @@ const routes: Routes = [
     { path: 'register', component: UserRegisterComponent },
     { path: 'contacts', component: ContactsPageComponent },
     { path: 'drawing/create', component: DrawingCreateComponent },
+    { path: 'drawing/all', component: GalleryPageComponent },
 ];
 
 @NgModule({
