@@ -6,19 +6,23 @@ import {
     HttpInterceptor
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { UserService } from './services/user.service';
 
 @Injectable()
 export class TokenInterceptor implements HttpInterceptor {
 
-    constructor() { }
+    constructor(private userService: UserService) { }
 
     intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-        request = request.clone({
-            setHeaders: {
-                Authorization: 'Bearer TODO',
-                'Content-Type': 'application/json'
-            }
-        });
+        let currentUser = this.userService.currentUser;
+        if (currentUser?.token) {
+            request = request.clone({
+                setHeaders: {
+                    'X-Authorization': currentUser.token,
+                    'Content-Type': 'application/json'
+                }
+            });
+        }
 
         return next.handle(request);
     }
