@@ -12,7 +12,11 @@ export class DrawingsService {
         return this.httpClient.get<IDrawing[]>(environment.getAllDrawingsUrl);
     }
 
-    like$(imageId: string) {
-        return this.httpClient.get<any>(`${environment.getAllDrawingsUrl}/${imageId}/vote`);
+    get$(drawingId: string) {
+        return this.httpClient.get<IDrawing>(`${environment.getAllDrawingsUrl}/${drawingId}`)
+    }
+
+    like$(drawingId: string) {
+        return this.httpClient.get<any>(`${environment.getAllDrawingsUrl}/${drawingId}/vote`);
     }
 }

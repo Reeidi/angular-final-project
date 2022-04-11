@@ -7,6 +7,7 @@ import { DrawingCardComponent } from './components/drawing-card/drawing-card.com
 import { LikesCounterComponent } from './components/likes-counter/likes-counter.component';
 import { DrawingsService } from './services/drawings.service';
 import { RouterModule } from '@angular/router';
+import { DrawingDetailsComponent } from './components/drawing-details/drawing-details.component';
 
 
 
@@ -15,7 +16,8 @@ import { RouterModule } from '@angular/router';
     DrawingCreateComponent,
     GalleryPageComponent,
     DrawingCardComponent,
-    LikesCounterComponent
+    LikesCounterComponent,
+    DrawingDetailsComponent
   ],
   imports: [
     CommonModule,

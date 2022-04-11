@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="containerPaperEffect">
+        <h2 class="title">{{author.firstName}}'s drawing</h2>
+
+        <div class="pad-2">
+            <h1>{{drawing.title}}</h1>
+            <img [src]="drawing.imageUrl" alt="" class="imageBorder" />
+            <div class="extra-wrap clr-6">
+                <p><strong>{{author.firstName}} {{author.lastName}}, {{author.age}} years old</strong></p>
+                <p>{{drawing.description}}</p>
+            </div>
+
+            <app-likes-counter [likes]="drawing.votes.length" [userLikesImage]="drawing.userLikesImage" [imageId]="drawing._id"></app-likes-counter>
+
+            <div class="pad-2" *ngIf="isAuthor">
+                <input type="submit" class="button" value="Edit" (click)="editClick()" />
+                <input type="submit" class="button" value="Delete" (click)="deleteClick()" />
+            </div>
+
+        </div>
+    </div>
+</div>
