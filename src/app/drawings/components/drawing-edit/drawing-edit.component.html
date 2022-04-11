@@ -8,7 +8,7 @@
             <form #f="ngForm" (ngSubmit)="submitHandler()">
                 <label for="drawingUrl" class="label">
                     <strong class="labelStrong">Drawing URL:</strong>
-                    <input ngModel #drawingUrl="ngModel" type="select" name="drawingUrl" class="input" required appUrlValidation (blur)="onUrlBlur()" />
+                    <input [(ngModel)]="drawing.imageUrl" #drawingUrl="ngModel" type="select" name="drawingUrl" class="input" required appUrlValidation (blur)="onUrlBlur()" />
                     <strong class="clear"></strong>
                 </label>
                 <!-- https://angular.io/guide/form-validation -->
@@ -18,7 +18,7 @@
 
                 <label for="title" class="label">
                     <strong class="labelStrong">Title:</strong>
-                    <input ngModel #title="ngModel" type="select" name="title" class="input" required [minlength]="2" />
+                    <input [(ngModel)]="drawing.title" #title="ngModel" type="select" name="title" class="input" required [minlength]="2" />
                     <strong class="clear"></strong>
                 </label>
                 <!-- https://angular.io/guide/form-validation -->
@@ -28,7 +28,7 @@
 
                 <label for="description" class="label">
                     <strong class="labelStrong">Description:</strong>
-                    <input ngModel #description="ngModel" type="select" name="description" class="input" />
+                    <input [(ngModel)]="drawing.description" #description="ngModel" type="select" name="description" class="input" />
                     <strong class="clear"></strong>
                 </label>
                 <label for="authorName" class="label">
@@ -38,7 +38,7 @@
                 </label>
                 <label for="authorAge" class="label">
                     <strong class="labelStrong">Author age:</strong>
-                    <input [(ngModel)]="currentUser.age" #authorAge="ngModel" type="number" name="authorAge" class="input" disabled />
+                    <input [ngModel]="currentUser.age" #authorAge="ngModel" type="number" name="authorAge" class="input" disabled />
                     <strong class="clear"></strong>
                 </label>
 
