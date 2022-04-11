@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from 'src/app/auth/services/user.service';
 import { IDrawing } from 'src/app/interfaces/drawing';
 import { IUser } from 'src/app/interfaces/user';
@@ -23,7 +23,7 @@ export class DrawingDetailsComponent implements OnInit {
         return this.author._id === this.userService.currentUser.user._id;
     }
 
-    constructor(private userService: UserService, private drawingService: DrawingsService, private route: ActivatedRoute) {
+    constructor(private userService: UserService, private drawingService: DrawingsService, private router: Router, private route: ActivatedRoute) {
         this.drawingService.get$(this.id).subscribe(drawing => this.drawing = drawing);
     }
 
@@ -31,11 +31,15 @@ export class DrawingDetailsComponent implements OnInit {
     }
 
     editClick() {
-        // () => navigate(`/drawing/${params.drawingId}/edit`)}
+        this.router.navigate([`/drawing/${this.id}/edit`]);
     }
 
     deleteClick() {
-
+        this.drawingService.deleteDrawing$(this.id).subscribe(res => {
+            if (res.success) {
+                this.router.navigate(['/drawing/all']);
+            }
+        })
     }
 
 }

@@ -3,7 +3,7 @@
         <h2 class="title">{{currentUser.firstName}}'s drawing</h2>
 
         <div class="pad-2">
-            <img [src]="drawingUrlStr" alt="" [class]="drawingUrlStr ? 'imageBorder' : 'hidden'" />
+            <img [src]="drawing.imageUrl" alt="" [class]="drawing?.imageUrl ? 'imageBorder' : 'hidden'" />
 
             <form #f="ngForm" (ngSubmit)="submitHandler()">
                 <label for="drawingUrl" class="label">
