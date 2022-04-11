@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { UserService } from 'src/app/core/services/user.service';
+import { UserService } from 'src/app/auth/services/user.service';
 import { IUser } from 'src/app/interfaces/user';
 
 @Component({

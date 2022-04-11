@@ -4,7 +4,6 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { UserService } from './core/services/user.service';
 import { StorageService } from './services/storage.service';
 import { CoreModule } from './core/core.module';
 import { AboutPageComponent } from './pages/about-page/about-page.component';
@@ -16,6 +15,7 @@ import { ContactsPageComponent } from './pages/contacts-page/contacts-page.compo
 import { FormsModule } from '@angular/forms';
 import { ContactService } from './services/contact.service';
 import { DrawingsModule } from './drawings/drawings.module';
+import { AuthModule } from './auth/auth.module';
 
 @NgModule({
   declarations: [
@@ -32,11 +32,11 @@ import { DrawingsModule } from './drawings/drawings.module';
     FormsModule,
     CoreModule,
     ScheduleModule,
-    DrawingsModule
+    DrawingsModule,
+    AuthModule
   ],
   providers: [
       StorageService,
-      UserService,
       EventService,
       ContactService
   ],

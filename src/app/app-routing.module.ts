@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { UserLoginComponent } from './core/components/user-login/user-login.component';
-import { UserRegisterComponent } from './core/components/user-register/user-register.component';
+import { UserLoginComponent } from './auth/components/user-login/user-login.component';
+import { UserRegisterComponent } from './auth/components/user-register/user-register.component';
 import { DrawingCreateComponent } from './drawings/components/drawing-create/drawing-create.component';
 import { AboutPageComponent } from './pages/about-page/about-page.component';
 import { ContactsPageComponent } from './pages/contacts-page/contacts-page.component';

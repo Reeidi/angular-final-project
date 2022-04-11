@@ -4,32 +4,26 @@ import { NavigationBarComponent } from './components/navigation-bar/navigation-b
 import { SliderHeaderComponent } from './components/slider-header/slider-header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { RouterModule } from '@angular/router';
-import { UserLoginComponent } from './components/user-login/user-login.component';
-import { UserRegisterComponent } from './components/user-register/user-register.component';
-import { FormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from './token.interceptor';
 import { ErrorHandlerInterceptor } from './error-handler.interceptor';
+import { AuthModule } from '../auth/auth.module';
 
 @NgModule({
     declarations: [
         NavigationBarComponent,
         SliderHeaderComponent,
         FooterComponent,
-        UserLoginComponent,
-        UserRegisterComponent,
     ],
     imports: [
         CommonModule,
         RouterModule,
-        FormsModule
+        AuthModule
     ],
     exports: [
         NavigationBarComponent,
         SliderHeaderComponent,
         FooterComponent,
-        UserLoginComponent,
-        UserRegisterComponent
     ],
     providers: [
         {
