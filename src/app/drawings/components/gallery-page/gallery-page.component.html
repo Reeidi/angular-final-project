@@ -9,7 +9,7 @@
             </div>
 
             <ul>
-                <app-drawing-card *ngFor="let drawing of drawings$ | async" [drawing]="drawing"></app-drawing-card>
+                <app-drawing-card *ngFor="let drawing of (drawings$ | async)" [drawing]="drawing"></app-drawing-card>
             </ul>
             <div class="clear"></div>
         </div>

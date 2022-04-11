@@ -9,6 +9,8 @@ import { DrawingsService } from './services/drawings.service';
 import { RouterModule } from '@angular/router';
 import { DrawingDetailsComponent } from './components/drawing-details/drawing-details.component';
 import { DrawingEditComponent } from './components/drawing-edit/drawing-edit.component';
+import { MyDrawingsPageComponent } from './components/my-drawings-page/my-drawings-page.component';
+import { MinePipe } from './mine.pipe';
 
 
 
@@ -19,7 +21,9 @@ import { DrawingEditComponent } from './components/drawing-edit/drawing-edit.com
     DrawingCardComponent,
     LikesCounterComponent,
     DrawingDetailsComponent,
-    DrawingEditComponent
+    DrawingEditComponent,
+    MyDrawingsPageComponent,
+    MinePipe
   ],
   imports: [
     CommonModule,

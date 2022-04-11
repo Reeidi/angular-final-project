@@ -1,0 +1,16 @@
+<section id="content">
+    <div class="container">
+        <div class="containerPaperEffect">
+            <h2 class="sectionTitle">{{currentUser.firstName}}'s drawings</h2>
+
+            <div class="buttonDiv">
+                <a routerLink="/drawing/create" class="button">Add drawing</a>
+            </div>
+
+            <ul>
+                <app-drawing-card *ngFor="let drawing of (drawings$ | async | mine:currentUser)" [drawing]="drawing"></app-drawing-card>
+            </ul>
+            <div class="clear"></div>
+        </div>
+    </div>
+</section>

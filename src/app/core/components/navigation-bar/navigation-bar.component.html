@@ -12,7 +12,7 @@
 
         <ul *ngIf="currentUser?.email" class="navBarGroup">
             <p class=navItem>Welcome, {{currentUser?.email}}</p>
-            <a routerLink="/mine" class="nav-link navLink">My drawings</a>
+            <a routerLink="/drawing/mine" class="nav-link navLink">My drawings</a>
             <a routerLink="/drawing/create" class="nav-link navLink">Add drawing</a>
             <a routerLink="/logout" class="nav-link navLink" (click)="logoutClick()">Logout</a>
         </ul>
