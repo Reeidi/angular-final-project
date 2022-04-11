@@ -12,11 +12,25 @@ export class UserLoginComponent {
 
     @ViewChild('f') form!: NgForm;
 
+    error: string | undefined;
+
     constructor(private userService: UserService, private router: Router) { }
 
     submitHandler() {
         let data = this.form.value;
-        this.userService.login(data);
-        this.router.navigate(['/']);
+        this.userService.login$(data).subscribe({
+            next: (response) => {
+                console.log(response);
+                if (response?.success || response?.token) {
+                    this.router.navigate(['/']);
+                } else {
+                    this.error = response?.error;
+                }
+            },
+            error: (err) => {
+                console.log(err);
+                this.router.navigate(['/login']);
+            }
+        });
     }
 }

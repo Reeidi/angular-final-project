@@ -69,6 +69,10 @@
                 RepeatPassword must be at least 4 characters.
             </div>
 
+            <div class="alert alert-danger" *ngIf="error" alert alert-danger>
+                {{error}}
+            </div>
+
             <div class="pad-2">
                 <input [disabled]="f.invalid" type="submit" class="sendButton" value="Sign Up" />
             </div>

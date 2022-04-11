@@ -7,6 +7,7 @@ const baseUrl = 'http://localhost:3946';
 export const environment = {
   production: false,
   loginUserUrl: `${baseUrl}/auth/login`,
+  registerUserUrl: `${baseUrl}/auth/register`,
   eventsUrl: `${baseUrl}/event`,
 };
 

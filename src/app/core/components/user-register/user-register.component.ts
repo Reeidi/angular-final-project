@@ -12,16 +12,25 @@ export class UserRegisterComponent {
 
     @ViewChild('f') form!: NgForm;
 
+    error: string | undefined;
+
     constructor(private userService: UserService, private router: Router) { }
 
-    async submitHandler() {
+    submitHandler() {
         let data = this.form.value;
-        let result = await this.userService.register(data);
-        // if (result.success) {
-        //     this.router.navigate(['/']);
-        // } else {
-        //     console.log(result);
-        //     setError(result.error);
-        // }
+        this.userService.register$(data).subscribe({
+            next: (response) => {
+                console.log(response);
+                if (response?.success) {
+                    this.router.navigate(['/login']);
+                } else {
+                    this.error = response?.error;
+                }
+            },
+            error: (err) => {
+                console.log(err);
+                this.router.navigate(['/register']);
+            }
+        });
     }
 }

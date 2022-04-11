@@ -24,6 +24,9 @@
             </div>
 
             <!-- <p [ngClass]="error ? 'labelSmall' : 'labelSmallHidden'">Invalid email or password.</p> -->
+            <div class="alert alert-danger" *ngIf="error" alert alert-danger>
+                {{error}}
+            </div>
 
             <div class="pad-2">
                 <input [disabled]="f.invalid" type="submit" class="sendButton" value="Log in" />

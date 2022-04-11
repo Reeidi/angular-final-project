@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { StorageService } from '../../services/storage.service';
 import { environment } from 'src/environments/environment';
 import { ILoggedUser } from '../../interfaces/loggedUser';
+import { map, tap } from 'rxjs';
+import { IResponse } from 'src/app/interfaces/response';
 
 @Injectable()
 export class UserService {
@@ -13,25 +15,24 @@ export class UserService {
 
     constructor(private storage: StorageService, private httpClient: HttpClient) { }
 
-    login(userData: { email: string, password: string }) {
-
-        // TODO:
-        userData = { email: 'reeidi@abv.bg', password: '1234' };
-
-        let obs = this.httpClient.post<ILoggedUser>(environment.loginUserUrl, userData);
-        obs.subscribe(result => {
-            if (result.hasOwnProperty('user') && result.hasOwnProperty('token')) {
-                this.storage.setItem('user', result as ILoggedUser);
-            }
-        });
+    login$(userData: { email: string, password: string }) {
+        return this.httpClient
+            .post<ILoggedUser>(environment.loginUserUrl, userData, { observe: 'response' })
+            .pipe(
+                map(response => response.body),
+                tap(body => {
+                    if (body && body.hasOwnProperty('user') && body.hasOwnProperty('token')) {
+                        this.storage.setItem('user', body as ILoggedUser);
+                    }
+                })
+            );
     }
 
     logout() {
         this.storage.setItem('user', null);
     }
 
-    async register(userData: { firstName: string, LastName: string, email: string, age: Number, password: string, repeatPassword: string }) {
-        // TODO:
-        console.log(`Trying to register user!!`, userData);
+    register$(userData: { firstName: string, LastName: string, email: string, age: Number, password: string, repeatPassword: string }) {
+        return this.httpClient.post<IResponse>(environment.registerUserUrl, userData);
     }
 }
