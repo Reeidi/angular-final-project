@@ -1,7 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { UserService } from 'src/app/auth/services/user.service';
 import { IUser } from 'src/app/interfaces/user';
+import { DrawingsService } from '../../services/drawings.service';
 
 @Component({
     selector: 'app-drawing-create',
@@ -22,10 +24,26 @@ export class DrawingCreateComponent {
         return `${this.currentUser.firstName} ${this.currentUser.lastName}`;
     }
 
-    constructor(private userService: UserService) { }
+    constructor(private userService: UserService, private drawingsService: DrawingsService, private router: Router) { }
 
     submitHandler() {
-        console.log(this.form.value);
+        let formData = this.form.value;
+        let data = {
+            title: formData.title,
+            description: formData.description,
+            imageUrl: formData.drawingUrl,
+            author: this.currentUser._id
+        };
+        this.drawingsService.createDrawing$(data).subscribe({
+            next: (response) => {
+                if (response?.success) {
+                    this.router.navigate(['/drawing/mine']);
+                }
+            },
+            error: (err) => {
+                console.log(err);
+            }
+        });
     }
 
     onUrlBlur() {

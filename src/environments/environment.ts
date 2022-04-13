@@ -10,6 +10,8 @@ export const environment = {
   registerUserUrl: `${baseUrl}/auth/register`,
   eventsUrl: `${baseUrl}/event`,
   getAllDrawingsUrl: `${baseUrl}/posts`,
+  createDrawingUrl: `${baseUrl}/posts/create`,
+  contactUrl: `${baseUrl}/contact`
 };
 
 /*

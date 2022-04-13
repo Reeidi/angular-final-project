@@ -16,9 +16,11 @@ export class ContactsPageComponent {
 
     submitHandler() {
         let data = this.form.value;
-        let result = this.contactService.send(data);
-        if (result) {
-            this.router.navigate(['/']);
-        }
+        this.contactService.send$(data).subscribe(response => {
+            if (response.success) {
+                this.router.navigate(['/']);
+            }
+        });
+
     }
 }

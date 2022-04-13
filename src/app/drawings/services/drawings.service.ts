@@ -24,4 +24,13 @@ export class DrawingsService {
     deleteDrawing$(drawingId: string) {
         return this.httpClient.delete<IResponse>(`${environment.getAllDrawingsUrl}/${drawingId}`);
     }
+
+    createDrawing$(drawingData: { title: string, description: string, imageUrl: string, author: string }) {
+        return this.httpClient.post<IResponse>(environment.createDrawingUrl, drawingData);
+    }
+
+    edit$(drawingId: string, drawingData: { title: string, description: string, imageUrl: string }) {
+        return this.httpClient.post<IResponse>(`${environment.getAllDrawingsUrl}/${drawingId}/edit`, drawingData);
+    }
+
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from 'src/app/auth/services/user.service';
 import { IDrawing } from 'src/app/interfaces/drawing';
 import { IUser } from 'src/app/interfaces/user';
@@ -26,15 +26,30 @@ export class DrawingEditComponent implements OnInit {
         return `${this.currentUser.firstName} ${this.currentUser.lastName}`;
     }
 
-    constructor(private userService: UserService, private drawingService: DrawingsService, private route: ActivatedRoute) {
-        this.drawingService.get$(this.id).subscribe(drawing => this.drawing = drawing);
+    constructor(private userService: UserService, private drawingsService: DrawingsService, private route: ActivatedRoute, private router: Router) {
+        this.drawingsService.get$(this.id).subscribe(drawing => this.drawing = drawing);
     }
 
     ngOnInit(): void {
     }
 
     submitHandler() {
-        console.log(this.form.value);
+        let formData = this.form.value;
+        let data = {
+            title: formData.title,
+            description: formData.description,
+            imageUrl: formData.drawingUrl,
+        };
+        this.drawingsService.edit$(this.id, data).subscribe({
+            next: (response) => {
+                if (response?.success) {
+                    this.router.navigate(['/drawing/mine']);
+                }
+            },
+            error: (err) => {
+                console.log(err);
+            }
+        });
     }
 
     onUrlBlur() {

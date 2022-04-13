@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { StorageService } from '../../services/storage.service';
 import { environment } from 'src/environments/environment';
 import { ILoggedUser } from '../../interfaces/loggedUser';
-import { map, Observable, tap } from 'rxjs';
+import { map, tap } from 'rxjs';
 import { IResponse } from 'src/app/interfaces/response';
 
 @Injectable()

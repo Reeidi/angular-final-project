@@ -4,4 +4,6 @@ export const environment = {
   registerUserUrl: ``,
   eventsUrl: ``,
   getAllDrawingsUrl: ``,
+  createDrawingUrl: ``,
+  contactUrl: ``
 };
