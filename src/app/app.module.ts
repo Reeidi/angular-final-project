@@ -14,7 +14,6 @@ import { EventService } from './services/event.service';
 import { ContactsPageComponent } from './pages/contacts-page/contacts-page.component';
 import { FormsModule } from '@angular/forms';
 import { ContactService } from './services/contact.service';
-import { DrawingsModule } from './drawings/drawings.module';
 import { AuthModule } from './auth/auth.module';
 import { NoPageComponent } from './pages/no-page/no-page.component';
 
@@ -34,7 +33,6 @@ import { NoPageComponent } from './pages/no-page/no-page.component';
     FormsModule,
     CoreModule,
     ScheduleModule,
-    DrawingsModule,
     AuthModule
   ],
   providers: [
