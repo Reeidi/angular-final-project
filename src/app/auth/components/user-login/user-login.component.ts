@@ -20,7 +20,6 @@ export class UserLoginComponent {
         let data = this.form.value;
         this.userService.login$(data).subscribe({
             next: (response) => {
-                console.log(response);
                 if (response?.success || response?.token) {
                     this.router.navigate(['/']);
                 } else {

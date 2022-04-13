@@ -20,7 +20,6 @@ export class UserRegisterComponent {
         let data = this.form.value;
         this.userService.register$(data).subscribe({
             next: (response) => {
-                console.log(response);
                 if (response?.success) {
                     this.router.navigate(['/login']);
                 } else {

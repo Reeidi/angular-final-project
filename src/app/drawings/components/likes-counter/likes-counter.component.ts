@@ -30,7 +30,7 @@ export class LikesCounterComponent implements OnInit {
             this.drawingService.like$(this.imageId).subscribe(x => {
                 if (x.hasOwnProperty('success') && x.success) {
                     this.userLikesImage = true;
-                    this.likes = x.likesCount || this.likes;
+                    this.likes = x.likesCount || this.likes + 1;
                 }
             });
         }
