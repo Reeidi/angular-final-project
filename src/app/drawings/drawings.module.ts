@@ -11,6 +11,7 @@ import { DrawingDetailsComponent } from './components/drawing-details/drawing-de
 import { DrawingEditComponent } from './components/drawing-edit/drawing-edit.component';
 import { MyDrawingsPageComponent } from './components/my-drawings-page/my-drawings-page.component';
 import { MinePipe } from './mine.pipe';
+import { UrlValidationDirective } from './url-validation.directive';
 
 
 
@@ -23,7 +24,8 @@ import { MinePipe } from './mine.pipe';
     DrawingDetailsComponent,
     DrawingEditComponent,
     MyDrawingsPageComponent,
-    MinePipe
+    MinePipe,
+    UrlValidationDirective
   ],
   imports: [
     CommonModule,
