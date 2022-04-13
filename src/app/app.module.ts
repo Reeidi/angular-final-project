@@ -16,6 +16,7 @@ import { FormsModule } from '@angular/forms';
 import { ContactService } from './services/contact.service';
 import { DrawingsModule } from './drawings/drawings.module';
 import { AuthModule } from './auth/auth.module';
+import { NoPageComponent } from './pages/no-page/no-page.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { AuthModule } from './auth/auth.module';
     AboutPageComponent,
     SchedulePageComponent,
     ContactsPageComponent,
+    NoPageComponent,
   ],
   imports: [
     BrowserModule,

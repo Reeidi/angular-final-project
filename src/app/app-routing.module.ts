@@ -10,6 +10,7 @@ import { MyDrawingsPageComponent } from './drawings/components/my-drawings-page/
 import { AboutPageComponent } from './pages/about-page/about-page.component';
 import { ContactsPageComponent } from './pages/contacts-page/contacts-page.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
+import { NoPageComponent } from './pages/no-page/no-page.component';
 import { SchedulePageComponent } from './pages/schedule-page/schedule-page.component';
 
 const routes: Routes = [
@@ -24,6 +25,7 @@ const routes: Routes = [
     { path: 'drawing/mine', component: MyDrawingsPageComponent, pathMatch: 'full' },
     { path: 'drawing/:id', component: DrawingDetailsComponent, pathMatch: 'full' },
     { path: 'drawing/:id/edit', component: DrawingEditComponent, pathMatch: 'full' },
+    { path: '**', component: NoPageComponent, pathMatch: 'full' },
 ];
 
 @NgModule({
