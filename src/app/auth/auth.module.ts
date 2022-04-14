@@ -4,6 +4,7 @@ import { UserLoginComponent } from './components/user-login/user-login.component
 import { UserRegisterComponent } from './components/user-register/user-register.component';
 import { FormsModule } from '@angular/forms';
 import { UserService } from './services/user.service';
+import { AuthGuard } from './auth.guard';
 
 
 
@@ -21,7 +22,8 @@ import { UserService } from './services/user.service';
       UserRegisterComponent
   ],
   providers: [
-      UserService
+      UserService,
+      AuthGuard,
   ],
 })
 export class AuthModule { }

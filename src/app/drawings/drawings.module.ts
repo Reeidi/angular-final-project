@@ -12,13 +12,17 @@ import { DrawingEditComponent } from './components/drawing-edit/drawing-edit.com
 import { MyDrawingsPageComponent } from './components/my-drawings-page/my-drawings-page.component';
 import { MinePipe } from './mine.pipe';
 import { UrlValidationDirective } from './url-validation.directive';
+import { AuthGuard } from '../auth/auth.guard';
+import { NoPageComponent } from '../pages/no-page/no-page.component';
+import { AuthorGuard } from './author.guard';
 
 const drawingRoutes: Routes = [
-    { path: 'create', component: DrawingCreateComponent, pathMatch: 'full' },
+    { path: 'create', component: DrawingCreateComponent, pathMatch: 'full', canActivate: [AuthGuard] },
     { path: 'all', component: GalleryPageComponent, pathMatch: 'full' },
-    { path: 'mine', component: MyDrawingsPageComponent, pathMatch: 'full' },
+    { path: 'mine', component: MyDrawingsPageComponent, pathMatch: 'full', canActivate: [AuthGuard] },
     { path: ':id', component: DrawingDetailsComponent, pathMatch: 'full' },
-    { path: ':id/edit', component: DrawingEditComponent, pathMatch: 'full' },
+    { path: ':id/edit', component: DrawingEditComponent, pathMatch: 'full', canActivate: [AuthGuard, AuthorGuard] },
+    { path: '**', component: NoPageComponent, pathMatch: 'full' },
 ];
 
 @NgModule({
@@ -40,7 +44,8 @@ const drawingRoutes: Routes = [
     RouterModule
   ],
   providers: [
-      DrawingsService
+      DrawingsService,
+      AuthorGuard
   ]
 })
 export class DrawingsModule { }
