@@ -20,7 +20,7 @@ export class DrawingDetailsComponent implements OnInit {
     }
 
     get isAuthor(): boolean {
-        return this.author._id === this.userService.currentUser.user._id;
+        return this.author && this.author._id === this.userService.currentUser?.user._id;
     }
 
     constructor(private userService: UserService, private drawingService: DrawingsService, private router: Router, private route: ActivatedRoute) {

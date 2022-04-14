@@ -1,4 +1,5 @@
-<div class="container">
+<!-- ngIf so it only shows after the drawing is loaded -->
+<div *ngIf="drawing" class="container">
     <div class="containerPaperEffect">
         <h2 class="title">{{author.firstName}}'s drawing</h2>
 
